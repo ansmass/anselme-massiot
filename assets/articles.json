@@ -1,0 +1,38 @@
+[
+     {
+         "id": "1",
+         "title": "01 - Page accueil",
+         "description": "Voici la page principale du site Le Hangar (Bar, Restaurant, Cave) contenant différentes sections la première sert à la description de l'activité, une section avec les commentaires et une présentation de l'équipe",
+         "src": "./assets/media/le-hangar-screen-one.png"
+     },
+     {
+         "id": "2",
+         "title": "02 - Section à propos",
+         "description": "Section contenant la description de l'activité mais aussi des informations sur le site avec les différentes pages qu'on peut retrouver.",
+         "src": "./assets/media/le-hangar-screen-two.png"
+     },
+     {
+         "id": "3",
+         "title": "03 - Section des avis client",
+         "description": "Sur cette section, nous pouvons retrouver d'un côté les avis des clients et de l'autre un formulaire permettant aux clients de laisser un avis sans avoir à se connecter.",
+         "src": "./assets/media/le-hangar-screen-three.png"
+     },
+     {
+         "id": "4",
+         "title": "04 - Page Cave",
+         "description": "Sur cette page, les utilisateurs peuvent voir une sélection des meilleures ventes. Il n'est cependant pas possible d'acheter sur le site car ce n'est pas un site marchand.",
+         "src": "./assets/media/le-hangar-screen-four.png"
+     },
+     {
+         "id": "5",
+         "title": "05 - Page ajout d'événements",
+         "description": "Le site possède un espace administrateur avec un menu pour ajouter des éléments au site comme des membres de l'équipe ainsi que des éléments à la page cave mais aussi des événements.",
+         "src": "./assets/media/le-hangar-screen-five.png"
+     },
+     {
+         "id": "6",
+         "title": "06 - Page modification des éléments",
+         "description": "Sur cette page, nous pouvons modifier les éléments de la cave mais nous avons aussi la possibilité de les supprimer. Une page similaire est disponible pour interagir avec la liste des membres de l'équipe",
+         "src": "./assets/media/le-hangar-screen-six.png"
+    }
+] 

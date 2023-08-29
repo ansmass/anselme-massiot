@@ -1,0 +1,17 @@
+{
+  "name": "anselme-massiot-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "normal": "sass styles/sass/style.scss:styles/css/style.css",
+    "minify": "sass styles/sass/style.scss:styles/css/style.css --style compressed",
+    "watch": "sass styles/sass/style.scss:styles/css/style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.12.2",
+    "sass": "^1.65.1"
+  }
+}

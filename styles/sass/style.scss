@@ -1,0 +1,17 @@
+// utils folder
+@import "utils/colors";
+@import "utils/responsive";
+
+// base folder
+@import "base/index";
+
+// sections folder
+@import "sections/home";
+@import "sections/works";
+@import "sections/contact";
+
+// layouts folder
+@import "layouts/works-article";
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');

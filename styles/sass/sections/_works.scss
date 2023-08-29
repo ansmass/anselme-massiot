@@ -1,0 +1,52 @@
+@media  screen and (min-width: 1070px){
+     .works-container{
+          height: 500vh;
+     
+          background-color: $charlestonGreen;
+     
+          &__horizontal-block{
+               height: 100vh;
+     
+               position: sticky;
+               top: 0;
+     
+               display: flex;
+     
+               overflow: hidden;
+     
+               &__title{
+                    width: 20vw;
+                    height: 100%;
+     
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+     
+                    > h2{
+                         font-size: 3em;
+                         color: $veryLigthGrey;
+                         text-transform: uppercase;
+     
+                         transform: rotate(-90deg);
+                         white-space: nowrap;
+                    }
+               }
+     
+               &__last-work{
+                    padding: 0 3vw;
+                    
+                    width: 500vw;
+                    height: 100%;
+     
+                    position: absolute;
+                    top: 0;
+     
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                    will-change: transform;
+               }
+          }
+     }
+}
