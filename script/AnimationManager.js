@@ -70,4 +70,31 @@ export class AnimationManager {
       { ...to, duration: duration, delay: delay, stagger: stagger, ease: ease });
     });
   }
+
+  startContactContainerRevealAnimation() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    let revealContainers = document.querySelectorAll(".contact-container__hero-reveal");
+
+    revealContainers.forEach((container) => {
+      let image = container.querySelector("img");
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          toggleActions: "restart none none reset"
+        }
+      });
+
+      tl.set(container, { autoAlpha: 1 });
+      tl.from(container, 2.5, {
+        yPercent: 100,
+        ease: Power1.in
+      });
+      tl.from(image, 2.5, {
+        yPercent: -100,
+        delay: -2.5,
+        ease: Power1.in
+      });
+    });
+  }
 }

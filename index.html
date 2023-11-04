@@ -17,9 +17,9 @@
      <link rel="mask-icon" href="assets/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
 
      <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-     <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-     <script src="https://kit.fontawesome.com/b3a0ba6a69.js" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -74,38 +74,30 @@
           </section>
 
           <section class="contact-container">
-               <section class="contact-container__navigation">
-                    <nav class="contact-container__navigation__links link-reveal">
-                         <ul class="contact-container__navigation__links__list">
-                              <li class="contact-container__navigation__links__list-items">
-                                   <a href="https://github.com/ansmass" title="Github" target="_blank">
-                                        <i class="fa-brands fa-github"></i>
-                                   </a>
+               <article class="contact-container__content">
+                    <section class="contact-container__content__email">
+                         <h2>Me contacter :</h2>
+                         <a href="mailto:massiot.anselme@gmail.com" class="email">massiot.anselme@gmail.com</a>
+                    </section>
+                    <section class="contact-container__content__links">
+                         <ul class="contact-container__content__links__list">
+                              <li class="contact-container__content__links__list-items">
+                                   <a href="https://github.com/ansmass" target="_blank" rel="noopener noreferrer">Github</a>
                               </li>
-                              <li class="contact-container__navigation__links__list-items">
-                                   <a href="https://www.linkedin.com/in/anselme-massiot-0b4203194/" title="LinkedIn" target="_blank">
-                                        <i class="fa-brands fa-linkedin"></i>
-                                   </a>
+                              <li class="contact-container__content__links__list-items">
+                                   <a href="https://www.linkedin.com/in/anselme-massiot-0b4203194/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                               </li>
-                              <li class="contact-container__navigation__links__list-items">
-                                   <a href="mailto:massiot.anselme@gmail.com" title="Envoyer un mail" target="_blank">
-                                        <i class="fa-solid fa-at"></i>
-                                   </a>
-                              </li>
-                              <li class="contact-container__navigation__links__list-items">
-                                   <a href="/assets/cv_downoald/CV_MASSIOT_ANSELME.pdf" title="Découvrir CV" target="_blank">
-                                        <i class="fa-solid fa-file-pdf"></i>
-                                   </a>
+                              <li class="contact-container__content__links__list-items">
+                                   <a href="assets/cv_downoald/CV_MASSIOT_ANSELME_DEVELOPPEUR.pdf" target="_blank">CV</a>
                               </li>
                          </ul>
-                    </nav>
-               </section>
+                    </section>
+               </article>
 
                <section class="contact-container__hero">
-                    <article class="contact-container__hero-content">
-                         <h2>Pour plus<br>d'informations</h2>
-                    </article>
-                    <img src="assets/media/picture-anselme.png" alt="Anselme Massiot" />
+                    <div class="contact-container__hero-reveal">
+                         <img class="reveal-image" src="assets/media/anselme-massiot-pics.png" alt="Anselme Massiot">
+                    </div>
                </section>
           </section>
      </main>

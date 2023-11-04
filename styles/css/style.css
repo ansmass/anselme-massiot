@@ -251,62 +251,77 @@ i {
   }
 }
 .contact-container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  position: relative;
 }
-.contact-container__hero {
-  width: 100%;
-  height: 85vh;
-  display: flex;
-  align-items: center;
-}
-.contact-container__hero-content {
-  padding-left: 7em;
-}
-.contact-container__hero-content > h2 {
-  text-transform: uppercase;
-  font-size: 5em;
-}
-.contact-container__hero-content > a {
-  text-decoration: none;
-  color: #F7A61C;
-  font-size: 1.7em;
-  font-weight: 300;
-}
-.contact-container__navigation {
-  width: 100%;
-  height: 15vh;
-  display: flex;
-}
-.contact-container__navigation__links {
-  padding-left: 7em;
+.contact-container__content {
+  padding-left: 5em;
   width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contact-container__content__email {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-container__content__email > h2 {
+  margin-bottom: 15px;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+.contact-container__content__email .email {
+  color: #F7A61C;
+  font-size: 1.3em;
+}
+.contact-container__content__links {
+  width: 100%;
+  height: 20vh;
+}
+.contact-container__content__links__list {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
 }
-.contact-container__navigation__links__list {
-  display: flex;
-  list-style: none;
+.contact-container__content__links__list-items {
+  margin-right: 4em;
+  list-style-type: none;
+  text-transform: uppercase;
+  animation: 3s ease-in;
 }
-.contact-container__navigation__links__list a {
-  margin-right: 5em;
+.contact-container__content__links__list-items > a:hover {
+  color: #F7A61C;
+  transition: 0.3s ease-out;
+}
+.contact-container__content a {
   text-decoration: none;
   color: #232B2B;
-  text-transform: uppercase;
 }
-.contact-container__navigation__links__list a:hover {
-  color: #F7A61C;
-  transition: 0.3s ease-in-out;
+.contact-container__hero {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-.contact-container__picture > img {
-  width: 40%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.contact-container__hero-reveal {
+  max-width: 500px;
+  height: 80%;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+}
+.contact-container__hero-reveal > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform-origin: left;
 }
 
 .works-container__horizontal-block__last-work__content {

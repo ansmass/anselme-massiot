@@ -6,9 +6,10 @@ import { ArticleLoader } from '/script/ArticleLoader.js';
 window.addEventListener('DOMContentLoaded', () => {
      // Instance of classes
      const scroller = new Scroller();
-     const animationManager = new AnimationManager();
      const articleLoader = new ArticleLoader();
-
-     animationManager.startAnimations();
+     const animationManager = new AnimationManager();
+     
      articleLoader.loadArticles();
-})
+     animationManager.startAnimations();
+     animationManager.startContactContainerRevealAnimation();
+});

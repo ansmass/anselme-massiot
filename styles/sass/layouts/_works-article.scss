@@ -3,7 +3,7 @@
           margin-right: 5em;
      }
 
-     width: 70vw;
+     width: 60vw;
      height: 90%;
 
      display: flex;
@@ -24,7 +24,7 @@
      img{
           @media screen and (min-width: 1070px){
                width: auto;
-               height: 60vh;
+               // height: 50vh;
           }
      }
 
