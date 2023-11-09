@@ -1,100 +1,79 @@
+import animationsData from './animationsData.js';
+
 export class AnimationManager {
   constructor() {
-    this.elementsToAnimate = [
-      {
-        class: 'moove-right',
-        selector: '.moove-right',
-        from: { x: '-100%', opacity: 0 },
-        to: { x: '0%', opacity: 1 },
-        duration: 2,
-        delay: 0.5,
-      },
-      {
-        class: 'moove-left',
-        selector: '.moove-left',
-        from: { x: '100%', opacity: 0 },
-        to: { x: '0%', opacity: 1 },
-        duration: 2,
-        delay: 0.5,
-      },
-      {
-        class: 'show-border',
-        selector: '.show-border',
-        from: { 'border-bottom': 'none', opacity: 0 },
-        to: { 'border-bottom': '2px solid #EAEAEA', opacity: 1 },
-        duration: 2,
-        delay: 1,
-      },
-      {
-        class: 'fade-in',
-        selector: '.fade-in',
-        from: { y: '+=20', opacity: 0 },
-        to: { y: 0, opacity: 1 },
-        duration: 2,
-        delay: 1.5,
-        stagger: 0.3,
-      },
-      {
-        class: 'show-blocks',
-        selector : '.show-blocks',
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-        duration: 1,
-        delay: 2,
-        stagger: 0.2,
-        ease: Power4.easeInOut
-      },
-      {
-        class: 'moove-right-2',
-        selector: '.moove-right-2',
-        from: { x: '-5%', opacity: 0 },
-        to: { x: '0%', opacity: 1 },
-        duration: 1.5,
-        delay: 3,
-      },
-      {
-        class: 'moove-right-3',
-        selector: '.moove-right-3',
-        from: { x: '-5%', opacity: 0 },
-        to: { x: '0%', opacity: 1 },
-        duration: 1.5,
-        delay: 3.5,
-      },
-    ];
+    this.elementsToAnimate = [];
+    
+    gsap.registerPlugin(CSSPlugin);
+    gsap.registerPlugin(ScrollTrigger);
   }
 
-  startAnimations() {
-    this.elementsToAnimate.forEach(({ selector, from, to, duration, delay, stagger, ease }) => {
-      gsap.fromTo(selector, 
-      { ...from }, 
-      { ...to, duration: duration, delay: delay, stagger: stagger, ease: ease });
+  initAnimations() {
+    this.defineAnimations();
+    this.startHomeContainerAnimations();
+    this.startContactContainerAnimation();
+  }
+
+  addAnimation(animation) {
+    this.elementsToAnimate.push(animation);
+  }
+
+  defineAnimations() {
+    animationsData.forEach((animation) => {
+      this.addAnimation(animation);
     });
   }
 
-  startContactContainerRevealAnimation() {
-    gsap.registerPlugin(ScrollTrigger);
+  startHomeContainerAnimations() {
+    const animations = this.elementsToAnimate;
+    let tl = gsap.timeline();
 
-    let revealContainers = document.querySelectorAll(".contact-container__hero-reveal");
-
-    revealContainers.forEach((container) => {
-      let image = container.querySelector("img");
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          toggleActions: "restart none none reset"
+    animations.forEach((animation) => {
+      const elementsToAnimate = document.querySelectorAll(animation.selector);
+      elementsToAnimate.forEach((element) => {
+        if (animation.from) { // Vérification pour animation.from
+          tl.from(element, {
+            x: animation.from.x,
+            opacity: animation.from.opacity,
+            duration: animation.duration,
+            delay: animation.delay,
+          });
         }
       });
-
-      tl.set(container, { autoAlpha: 1 });
-      tl.from(container, 2.5, {
-        yPercent: 100,
-        ease: Power1.in
-      });
-      tl.from(image, 2.5, {
-        yPercent: -100,
-        delay: -2.5,
-        ease: Power1.in
-      });
     });
+
+    tl.play();
+  }
+
+  startContactContainerAnimation() {
+    const animationData = animationsData.find(
+      (data) => data.class === "contact-animation-class"
+    );
+
+    if (animationData) {
+      let revealContainers = document.querySelectorAll(animationData.selector);
+
+      revealContainers.forEach((container) => {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: container,
+            toggleActions: "restart none none reset",
+          },
+        });
+
+        if (animationData.timeline.set) {
+          tl.set(container, animationData.timeline.set);
+        }
+
+        if (animationData.timeline.from) {
+          animationData.timeline.from.forEach((fromData) => {
+            const target = fromData.target || container;
+            tl.from(target, fromData.duration, {
+              ...fromData.props,
+            });
+          });
+        }
+      });
+    }
   }
 }

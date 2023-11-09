@@ -75,17 +75,20 @@
 
           overflow: hidden;
           
-          &-reveal{
+          &__reveal{
                max-width: 500px;
                height: 80%;
 
                position: relative;
                overflow: hidden;
-               visibility: hidden;
+               // visibility: hidden;
 
-               > img{
+               &-image{
                     height: 100%;
                     width: 100%;
+
+                    z-index: 1;
+
                     object-fit: cover;
                     transform-origin: left;
                }

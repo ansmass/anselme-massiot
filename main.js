@@ -10,6 +10,5 @@ window.addEventListener('DOMContentLoaded', () => {
      const animationManager = new AnimationManager();
      
      articleLoader.loadArticles();
-     animationManager.startAnimations();
-     animationManager.startContactContainerRevealAnimation();
+     animationManager.initAnimations();
 });

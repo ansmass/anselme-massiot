@@ -128,6 +128,7 @@ i {
 }
 .home-container__description-skils .show-border {
   padding: 1em 0;
+  border-bottom: 2px solid #EAEAEA;
 }
 .home-container__description-skils__list {
   width: 100%;
@@ -310,18 +311,39 @@ i {
   justify-content: center;
   overflow: hidden;
 }
-.contact-container__hero-reveal {
+.contact-container__hero__reveal {
   max-width: 500px;
   height: 80%;
   position: relative;
   overflow: hidden;
-  visibility: hidden;
 }
-.contact-container__hero-reveal > img {
+.contact-container__hero__reveal-image {
   height: 100%;
   width: 100%;
+  z-index: 1;
   object-fit: cover;
   transform-origin: left;
+}
+@media screen and (max-width: 800px) {
+  .contact-container__content {
+    padding: 0;
+    width: 100%;
+  }
+  .contact-container__content__email {
+    padding-left: 1em;
+  }
+  .contact-container__content__email > h2 {
+    font-size: 2.5em;
+  }
+  .contact-container__content__links__list {
+    justify-content: space-evenly;
+  }
+  .contact-container__content__links__list-items {
+    margin: 0;
+  }
+  .contact-container__hero {
+    display: none;
+  }
 }
 
 .works-container__horizontal-block__last-work__content {
