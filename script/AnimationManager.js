@@ -25,23 +25,15 @@ export class AnimationManager {
   }
 
   startHomeContainerAnimations() {
-    const animations = this.elementsToAnimate;
-    let tl = gsap.timeline();
-
-    animations.forEach((animation) => {
-      const elementsToAnimate = document.querySelectorAll(animation.selector);
+    const tl = gsap.timeline();
+    this.elementsToAnimate.forEach(({ selector, from, duration, delay }) => {
+      const elementsToAnimate = document.querySelectorAll(selector);
       elementsToAnimate.forEach((element) => {
-        if (animation.from) { // Vérification pour animation.from
-          tl.from(element, {
-            x: animation.from.x,
-            opacity: animation.from.opacity,
-            duration: animation.duration,
-            delay: animation.delay,
-          });
+        if (from) {
+          tl.from(element, { x: from.x, opacity: from.opacity, duration, delay });
         }
       });
     });
-
     tl.play();
   }
 
@@ -49,10 +41,11 @@ export class AnimationManager {
     const animationData = animationsData.find(
       (data) => data.class === "contact-animation-class"
     );
-
+  
     if (animationData) {
-      let revealContainers = document.querySelectorAll(animationData.selector);
-
+      const { selector, timeline } = animationData;
+      const revealContainers = document.querySelectorAll(selector);
+  
       revealContainers.forEach((container) => {
         let tl = gsap.timeline({
           scrollTrigger: {
@@ -60,17 +53,14 @@ export class AnimationManager {
             toggleActions: "restart none none reset",
           },
         });
-
-        if (animationData.timeline.set) {
-          tl.set(container, animationData.timeline.set);
+  
+        if (timeline.set) {
+          tl.set(container, timeline.set);
         }
-
-        if (animationData.timeline.from) {
-          animationData.timeline.from.forEach((fromData) => {
-            const target = fromData.target || container;
-            tl.from(target, fromData.duration, {
-              ...fromData.props,
-            });
+  
+        if (timeline.from) {
+          timeline.from.forEach(({ target = container, duration, props }) => {
+            tl.from(target, duration, { ...props });
           });
         }
       });
