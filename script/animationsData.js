@@ -51,7 +51,7 @@ const animationsData = [
     class: "contact-animation-class",
     selector: ".contact-container__hero__reveal",
     timeline: {
-      set: { autoAlapha: 1 },
+      set: { autoAlpha: 1 },
       from: [
         {
           props: { yPercent: -100 },
